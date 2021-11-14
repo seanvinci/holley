@@ -1,0 +1,24 @@
+# Ignore everything in the root except marked items
+/*
+!.gitignore
+!wp-content/
+!robots.txt
+!php.ini
+!mailers/
+!static/
+
+# Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+ 
+# Ignore everything in the "plugins" directory, except specified plugins
+wp-content/plugins/*
+!wp-content/plugins/custom-functionality/
+ 
+# Ignore everything in the "themes" directory, except specified themes
+wp-content/themes/*
+!wp-content/themes/holley/
+
+# Ignore DS_Store files
+.DS_Store
