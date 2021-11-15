@@ -28,7 +28,7 @@ function create_post_type_news() {
     'has_archive'          => true,
     'menu_position'        => 4,
     'menu_icon'            => 'dashicons-text',
-    'supports'             => array( 'title', 'editor', 'excerpt', 'author', 'revisions'),
+    'supports'             => array( 'title', 'editor', 'excerpt', 'thumbnail'),
   );
   register_post_type( 'news', $args );
 }

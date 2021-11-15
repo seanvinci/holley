@@ -5,8 +5,6 @@
 /*******************************/
 
 
-/* REMOVE ADMIN PAGES */
-
 // Remove WP logo from admin nav bar
 function annointed_admin_bar_remove() {
   global $wp_admin_bar;
@@ -21,6 +19,10 @@ function my_admin_bar_render() {
 }
 add_action( 'wp_before_admin_bar_render', 'my_admin_bar_render' );
 
+/* Disable WordPress Admin Bar for all users */
+add_filter( 'show_admin_bar', '__return_false' );
+
+/* REMOVE ADMIN PAGES */
 
 // Hide Admin Menu Items
 function hide_menu() {

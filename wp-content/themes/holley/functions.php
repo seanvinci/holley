@@ -6,14 +6,6 @@ function register_theme_menus() {
   register_nav_menus(
     array(
       'primary-nav'       => __('Primary Nav'),
-      'precollege-nav'    => __('Pre-College Nav'),
-      'gapyear-nav'       => __('Gap Year Nav'),
-      'professional-nav'  => __('Professional Nav'),
-      'admissions-nav'    => __('Admissions Nav'),
-      'about-nav'         => __('About Nav'),
-      'support-nav'       => __('Support Nav'),
-      'community-nav'     => __('Community Nav'),
-      'features-nav'      => __('Features Nav')
     )
   );
 }
@@ -71,32 +63,31 @@ function send_smtp_email( $phpmailer ) {
 
 // Custom styles for login page
 function custom_login_styles() {
-  wp_enqueue_style('login-styles', get_template_directory_uri() . '/css/custom-login.css');
+  wp_enqueue_style('login-styles', get_template_directory_uri().'/assets/styles/custom-login.css');
 }
 add_action( 'login_enqueue_scripts', 'custom_login_styles' );
 
 // Custom styles for CMS
 function custom_admin_styles() {
-  wp_enqueue_style('admin-styles', get_template_directory_uri() . '/css/custom-admin.css');
+  wp_enqueue_style('admin-styles', get_template_directory_uri().'/assets/styles/custom-admin.css');
 }
 add_action('admin_enqueue_scripts', 'custom_admin_styles');
 
 // All other CSS files
-function nytedu_theme_styles() {
+function custom_theme_styles() {
+  wp_deregister_style( 'dashicons' );
   wp_dequeue_style('wp-block-library');
-  wp_enqueue_style('normalize', get_template_directory_uri().'/css/normalize.custom.min.css');
-  wp_enqueue_style('foundation', get_template_directory_uri().'/css/foundation.custom.min.css');
-  wp_enqueue_style('main', get_template_directory_uri().'/css/main.css');
+  wp_enqueue_style('main', get_template_directory_uri().'/assets/styles/main.css');
 }
-add_action('wp_enqueue_scripts', 'nytedu_theme_styles');
+add_action('wp_enqueue_scripts', 'custom_theme_styles');
 
 // Link JS files
-function nytedu_theme_js() {
+function custom_theme_js() {
   wp_deregister_script('jquery');
   wp_deregister_script('wp-embed');
-  wp_enqueue_script('jquery', get_template_directory_uri()."/js/jquery-1.12.4.min.js", false, null, true);
-  wp_enqueue_script('validate_js', get_template_directory_uri().'/js/jquery.validate.min.js', array('jquery'), '', true );
-  wp_enqueue_script('main_js', get_template_directory_uri().'/js/main.js', array('jquery'), '', true );
-  wp_enqueue_script('fitvids_js', get_template_directory_uri().'/js/jquery.fitvids.js', array('jquery'), '', true );
+  wp_enqueue_script('jquery', get_template_directory_uri()."/assets/scripts/jquery-3.6.0.min.js", false, null, true);
+  wp_enqueue_script('validate', get_template_directory_uri().'/assets/scripts/jquery.validate.min.js', array('jquery'), '', true );
+  wp_enqueue_script('main', get_template_directory_uri().'/assets/scripts/main.js', array('jquery'), '', true );
+  wp_enqueue_script('fitvids', get_template_directory_uri().'/assets/scripts/jquery.fitvids.js', array('jquery'), '', true );
 }
-add_action('wp_enqueue_scripts', 'nytedu_theme_js');
+add_action('wp_enqueue_scripts', 'custom_theme_js');

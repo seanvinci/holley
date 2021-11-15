@@ -1,2 +1,2 @@
-<?php include('partials/head.php'); ?>
-<?php include('partials/nav.php'); ?>
+<?php include_once('partials/head.php'); ?>
+<?php include_once('partials/nav.php'); ?>

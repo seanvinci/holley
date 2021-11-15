@@ -1,0 +1,285 @@
+/* ACF Custom Admin Layout */
+
+
+.nopad { padding: 0 !important; }
+
+.acf-admin-hide { display: none !important; }
+
+.acf-admin-bold-title label { font-weight: 600 !important; }
+
+
+.acf-admin-wordwrap-fix .select2-container { overflow: hidden !important; }
+
+.acf-admin-wordwrap-fix .select2-container .select2-selection--single .select2-selection__rendered {
+  white-space: normal !important;
+  word-break: break-all !important;
+}
+
+
+/* Hide main field label */
+
+.acf-admin-hide-label > div.acf-label { display: none !important; }
+.acf-admin-show-label > div.acf-label { display: inline-block !important; }
+
+/* Make field label not bold */
+
+.acf-admin-unbold-label > div.acf-label label { font-weight: normal !important; }
+
+/* Make main field label visibly hidden */
+
+.acf-field.acf-admin-invisible-label > div.acf-label { visibility: hidden; }
+
+
+/* Remove left border from field */
+
+div.acf-field.acf-admin-no-left-border {
+  border-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+
+/* Remove top border from field */
+
+div.acf-field.acf-admin-no-top-border {
+  border-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+
+/* Remove bottom padding from field */
+
+.acf-field.acf-admin-no-bottom-pad { padding-bottom: 0 !important; }
+
+
+/* Display 2 repeater rows inline */
+
+.acf-admin-2-inline .acf-row {
+  display: inline-block;
+  /*float: left;*/
+  vertical-align: top;
+  width: 100%;
+}
+
+.acf-admin-2-inline.acf-field {
+  display: inline-block;
+  width: 100%;
+}
+
+.acf-admin-2-inline .acf-row .acf-row { width: 100% !important; }
+
+.acf-admin-2-inline .acf-fields { width: 100%; }
+.acf-admin-2-inline .acf-row td { border-top: 0; }
+
+@media only screen and (min-width: 1150px) {
+  .acf-admin-2-inline .acf-row { width: 50%; }
+  .acf-admin-2-inline .acf-row .acf-field-image { min-height: 16.2em; }
+}
+
+
+/* Display 3 repeater rows inline */
+
+.acf-admin-3-inline .acf-row {
+  display: inline-block;
+  /*float: left;*/
+  vertical-align: top;
+  width: 100%;
+}
+
+.acf-admin-3-inline.acf-field {
+  display: inline-block;
+  width: 100%;
+}
+
+.acf-admin-3-inline .acf-row .acf-row { width: 100% !important; }
+
+.acf-admin-3-inline .acf-fields { width: 100%; }
+.acf-admin-3-inline .acf-row td { border-top: 0; }
+
+@media only screen and (min-width: 700px) {
+  .acf-admin-3-inline .acf-row { width: 50%; }
+}
+@media only screen and (min-width: 850px) {
+  .acf-admin-3-inline .acf-row { width: 100%; }
+}
+@media only screen and (min-width: 1150px) {
+  .acf-admin-3-inline .acf-row { width: 50%; }
+  .acf-admin-3-inline .acf-row .acf-field-image { min-height: 16.2em; }
+}
+@media only screen and (min-width: 1350px) {
+  .acf-admin-3-inline .acf-row { width: 33.3333%; }
+}
+
+
+/* Display 4 repeater rows inline */
+
+.acf-admin-4-inline .acf-row {
+  display: inline-block;
+  /*float: left;*/
+  vertical-align: top;
+  width: 100%;
+}
+
+.acf-admin-4-inline.acf-field {
+  display: inline-block;
+  width: 100%;
+}
+
+.acf-admin-4-inline .acf-row .acf-row { width: 100% !important; }
+
+.acf-admin-4-inline .acf-fields { width: 100%; }
+.acf-admin-4-inline .acf-row td { border-top: 0; }
+
+@media only screen and (min-width: 700px) {
+  .acf-admin-4-inline .acf-row { width: 50%; }
+}
+@media only screen and (min-width: 850px) {
+  .acf-admin-4-inline .acf-row { width: 100%; }
+}
+@media only screen and (min-width: 1150px) {
+  .acf-admin-4-inline .acf-row { width: 50%; }
+  .acf-admin-4-inline .acf-row .acf-field-image { min-height: 16.2em; }
+}
+@media only screen and (min-width: 1350px) {
+  .acf-admin-4-inline .acf-row { width: 25%; }
+}
+
+/* Checkbox List - 4 Columns */
+
+.acf-admin-checkbox-list-4-inline .acf-checkbox-list > li {
+  float: left;
+  width: 25%;
+}
+
+
+/* Display 5 repeater rows inline */
+
+.acf-admin-5-inline .acf-row {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+
+.acf-admin-5-inline.acf-field {
+  display: inline-block;
+  width: 100%;
+}
+
+.acf-admin-5-inline .acf-row .acf-row { width: 100% !important; }
+
+.acf-admin-5-inline .acf-fields { width: 100%; }
+.acf-admin-5-inline .acf-row td { border-top: 0; }
+
+@media only screen and (min-width: 700px) {
+  .acf-admin-5-inline .acf-row { width: 50%; }
+}
+@media only screen and (min-width: 850px) {
+  .acf-admin-5-inline .acf-row { width: 100%; }
+}
+@media only screen and (min-width: 1150px) {
+  .acf-admin-5-inline .acf-row { width: 50%; }
+  .acf-admin-5-inline .acf-row .acf-field-image { min-height: 16.2em; }
+}
+@media only screen and (min-width: 1350px) {
+  .acf-admin-5-inline .acf-row { width: 20%; }
+}
+
+/* Checkbox List - 5 Columns */
+
+.acf-admin-checkbox-list-5-inline .acf-checkbox-list > li {
+  float: left;
+  width: 20%;
+}
+
+
+/* Image Gallery */
+
+.acf-admin-gallery-custom .acf-gallery .acf-gallery-toolbar { background-color: #eee; }
+.acf-admin-gallery-custom .acf-gallery { height: 210px !important;}
+
+/* Video oEmbed */
+
+.acf-field-oembed.acf-admin-oembed-sizing.acf-field .acf-input { max-width: 18.75rem; }
+
+.acf-field-oembed.acf-admin-oembed-sizing .acf-oembed .canvas,
+.acf-field-oembed.acf-admin-oembed-sizing .acf-oembed.has-value .canvas {
+  max-height: 9.813rem;
+  min-height: 9.813rem;
+  overflow: hidden;
+}
+
+.acf-field-oembed.acf-admin-hide-oembed .acf-oembed .canvas,
+.acf-field-oembed.acf-admin-hide-oembed .acf-oembed.has-value .canvas {
+  display: none;
+}
+
+.acf-field-oembed.acf-admin-oembed-sizing .acf-oembed .canvas-media { height: 9.813rem; }
+.acf-field-oembed.acf-admin-oembed-sizing .acf-oembed .canvas iframe { height: 100%; }
+
+
+/* Field Spacer */
+
+.acf-fields > .acf-field.acf-admin-spacer { padding: 0;}
+.acf-admin-spacer .acf-label { display: none; }
+
+
+/*Short WYSIWYG Editor*/
+
+.acf-admin-short-editor .wp-editor-container textarea.wp-editor-area { height: 13.75rem !important; }
+.acf-admin-short-editor .acf-editor-wrap iframe {
+  height: 10rem !important;
+  min-height: 10rem !important;
+}
+
+
+.acf-admin-no-clone-styles.acf-field-clone > div.acf-label { display: none !important; }
+.acf-admin-no-clone-styles.acf-field-clone .acf-fields > .acf-field { padding: 0 !important; }
+.acf-admin-no-clone-styles.acf-field-clone .acf-clone-fields { border: 0 !important; }
+
+
+.widget .acf-field { width: 100% !important; }
+
+
+/* Remove box from prepended text */
+
+.acf-admin-unbox-prepend .acf-input-prepend {
+  background: transparent;
+  border: 0;
+  padding-left: 0;
+}
+
+.acf-admin-unbox-append .acf-input-append {
+  background: transparent;
+  border: 0;
+  padding-right: 0;
+}
+
+/* Hide Group Box */
+
+.acf-admin-unbox-group .acf-fields.-border { border: 0; }
+.acf-admin-unbox-group { padding: 0 !important; }
+
+.acf-admin-bold-message .message { font-weight: 600; }
+
+.acf-admin-unbold-label.acf-field .acf-label label { font-weight: 400; }
+
+/* Reduce width of range slider */
+
+.acf-admin-reduce-range-slider .acf-range-wrap input[type="range"] { width: 6rem; }
+
+
+/* Summer Terms & Grades - Grade ordering */
+
+.acf-admin-fix-grade-order .acf-taxonomy-field .acf-checkbox-list ul.children {
+  display: flex;
+  flex-direction: column;
+}
+
+.acf-admin-fix-grade-order .acf-taxonomy-field .acf-checkbox-list ul.children li:first-child { order: 2; }
+
+.acf-admin-fix-grade-order .acf-taxonomy-field .acf-checkbox-list ul.children li:nth-child(2) { order: 3; }
+
+.acf-admin-fix-grade-order .acf-taxonomy-field .acf-checkbox-list ul.children li:nth-child(3) { order: 4; }
+
+.acf-admin-fix-grade-order .acf-taxonomy-field .acf-checkbox-list ul.children li:nth-child(4) { order: 1; }
+
+.acf-admin-fix-grade-order .acf-taxonomy-field .acf-checkbox-list ul.children li:nth-child(5) { order: 5; }

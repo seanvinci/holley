@@ -1,0 +1,129 @@
+/**** FONTS ****/
+
+@font-face {
+  font-family: nyt-franklin;
+  src: local("â˜ºï¸Ž"), url(fonts/nyt-franklin-300-normal.woff) format("woff");
+  font-style: normal;
+  font-weight: 300
+}
+@font-face {
+  font-family: nyt-franklin;
+  src: local("â˜ºï¸Ž"), url(fonts/nyt-franklin-300-italic.woff) format("woff");
+  font-style: italic;
+  font-weight: 300
+}
+@font-face {
+  font-family: nyt-franklin;
+  src: local("â˜ºï¸Ž"), url(fonts/nyt-franklin-500-normal.woff) format("woff");
+  font-style: normal;
+  font-weight: 500
+}
+@font-face {
+  font-family: nyt-franklin;
+  src: local("â˜ºï¸Ž"), url(fonts/nyt-franklin-500-italic.woff) format("woff");
+  font-style: italic;
+  font-weight: 500
+}
+@font-face {
+  font-family: nyt-franklin;
+  src: local("â˜ºï¸Ž"), url(fonts/nyt-franklin-700-normal.woff) format("woff");
+  font-style: normal;
+  font-weight: 700
+}
+@font-face {
+  font-family: nyt-franklin;
+  src: local("â˜ºï¸Ž"), url(fonts/nyt-franklin-700-italic.woff) format("woff");
+  font-style: italic;
+  font-weight: 700
+}
+
+
+/**** GLOBAL ****/
+
+html body {
+  background-image: url('../../../uploads/2015/11/20161211-DSC08673_1400x800.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  color: #333;
+  font-family: 'nyt-franklin', 'Helvetica', Arial, sans-serif;
+}
+
+html body:after {
+  background-color: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+body #login {
+  position: relative;
+  z-index: 1;
+}
+
+body.login form {
+  background-color: #eee;
+  border-radius: 0.25rem;
+}
+
+body.login form input[type=checkbox],
+body.login input[type=text] {
+  background: #fff;
+  box-shadow: none;
+  border-color: #ddd;
+  border-radius: 0.25rem;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.6rem;
+  line-height: 1;
+}
+
+body.login form input[type=checkbox]:focus,
+body.login input[type=text]:focus {
+  border-color: #bbb;
+}
+
+body.login input[type=checkbox]:checked:before { color: #dd2e32; }
+
+body.login h1 a {
+  background-image: url('../img/SoNYT_logo_white.svg');
+  height: 3.3rem;
+  width: 20rem;
+  background-size: 100%;
+}
+
+body.login .button-primary {
+  background-color: #dd2e32;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+body.login .button-primary:hover,
+body.login .button-primary:focus { background-color: #c30e19; }
+
+body.login a { color: #dd2e32; }
+
+body.login a:hover,
+body.login a:focus {
+  color: #dd2e32;
+  text-decoration: none;
+}
+
+body.login #backtoblog a,
+body.login #nav a {
+  color: #fff;
+}
+
+body.login #backtoblog a:hover,
+body.login #backtoblog a:focus,
+body.login #nav a:hover,
+body.login #nav a:focus {
+  color: #fff;
+  text-decoration: underline;
+}
