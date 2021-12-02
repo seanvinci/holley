@@ -98,8 +98,11 @@ hr {
 /**** GLOBAL ****/
 
 body {
-  background-image: url('assets/images/noisy_@2X.png');
-  background-color: #ddd;
+  background-color: #111;
+  background-size: cover;
+  background-image: url('../images/ebuen-clemente-jr-H5Iw3Xz0vxM-unsplash.jpg');
+  background-attachment: fixed;
+  color: #fff;
   display: flex;
   flex-basis: 100%;
   flex-direction: column;
@@ -141,9 +144,7 @@ body:after {
 
 @media only screen and (min-width: 48em) {
 
-  .column {
-    grid-gap: 3.125rem;
-  }
+  .column { grid-gap: 3.125rem; }
 
 }
 
@@ -151,23 +152,42 @@ body:after {
 /* Main Content Area */
 
 .site-main {
+  width: auto;
+}
+
+.site-main-inner {
   flex: 1;
   margin: 0 auto;
-  padding: 3.2rem 1.2rem 1.2rem;
+  padding: 6rem 2rem 2rem;
   width: 100%;
+}
+
+.home .site-main-inner {
+  height: calc(100vh - 6rem);
 }
 
 .content-block-bottom { padding-bottom: 1rem; }
 
 .content-block-top { padding-top: 1rem; }
 
-.content-header { position: relative; }
+.content-header {
+  margin-bottom: 2rem;
+  position: relative;
+}
 
 .content-header h2 { margin-bottom: 0; }
 
 @media only screen and (min-width: 48em) {
 
   .site-main {
+    border-bottom: 1px solid #e9d3a6;
+    border-left: 1px solid #e9d3a6;
+    border-right: 1px solid #e9d3a6;
+    border-top: 0;
+    margin: 3rem
+  }
+
+  .site-main-inner {
     max-width: 82.5rem;
     padding: 6rem 3.125rem 3.125rem;
   }
@@ -195,6 +215,7 @@ h3,
 h4 {
   font-family: Georgia, Times, "Times New Roman", serif;
   font-weight: 500;
+  font-style: italic;
 }
 
 h1:last-child,
@@ -211,14 +232,6 @@ h3 {}
 h4 {}
 
 p {}
-
-.dark-bg h1,
-.dark-bg h2,
-.dark-bg h3,
-.dark-bg h4,
-.dark-bg p {
-  color: #fff;
-}
 
 @media only screen and (min-width: 48em) {
 
@@ -251,7 +264,7 @@ p {}
 
 a,
 a:hover {
-  color: #333;
+  color: #e9d3a6;
   text-decoration: underline;
 }
 
@@ -265,54 +278,63 @@ a[href^="tel:"]:active {
   text-decoration: none !important;
 }
 
-.dark-bg a,
-.dark-bg a:hover {
-  color: #fff;
-}
-
 .button,
 a.button,
-button.button {
-  border: none;
+button.button,
+.bit-widget .bit-event .bit-rsvp.bit-button,
+.bit-widget .bit-event .bit-offers.bit-button {
+  border-style: solid;
   border-radius: 0;
+  border-width: 1px;
   cursor: pointer;
   display: inline-block;
   font-family: Georgia, Times, "Times New Roman", serif;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 400;
   line-height: 1;
-  padding: 0.9rem;
+  padding: 0.9rem 1.2rem;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
-  transition: background-color 0.2s, color 0.3s;
+  text-transform: capitalize;
+  transition: background-color 0.2s, border-color 0.2s;
   width: auto;
 }
 
-.button-light,
-a.button-light,
-button.button-light {
-  background-color: #aaa;
-  color: #333;
+.button-solid,
+a.button-solid,
+button.button-solid,
+.bit-widget .bit-event .bit-offers.bit-button {
+  background-color: #3f6e6e;
+  border-color: #3f6e6e;
+  color: #e9d3a6;
 }
 
-.button-light:hover,
-a.button-light:hover,
-button.button-light:hover {
-  background-color: #bbb;
+.button-solid:hover,
+a.button-solid:hover,
+button.button-solid:hover,
+.bit-widget .bit-event .bit-offers.bit-button:hover {
+  background-color: #365e5e;
+  border-color: #365e5e;
+  color: #e9d3a6;
 }
 
-.button-dark,
-a.button-dark,
-button.button-dark {
-  background-color: #444;
-  color: #fff;
+.button-outline,
+a.button-outline,
+button.button-outline,
+.bit-widget .bit-event .bit-rsvp.bit-button {
+  background-color: transparent;
+  border-color: #3f6e6e;
+  color: #e9d3a6;
 }
 
-.button-dark:hover,
-a.button-dark:hover,
-button.button-dark:hover {
-  background-color: #555;
+.button-outline:hover,
+a.button-outline:hover,
+button.button-outline:hover,
+.bit-widget .bit-event .bit-rsvp.bit-button:hover {
+  background-color: #365e5e;
+  border-color: #365e5e;
+  color: #e9d3a6;
 }
 
 /**** FORMS ****/
@@ -325,7 +347,6 @@ button.button-dark:hover {
   background-color: transparent;
   display: inline-block;
   position: relative;
-  width: 11rem;
 }
 
 .input-wrap input,
@@ -334,19 +355,16 @@ button.button-dark:hover {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background: transparent;
+  background-color: #3f6e6e;
   border: none;
-  border-bottom-color: #888;
-  border-bottom-style: solid;
-  border-bottom-width: 0.0625rem;
-  color: #333;
+  color: #fff;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1;
   outline: none;
-  padding: 0.5rem 0.5rem 0.5rem 0;
-  transition: border-bottom-color 0.2s;
+  padding: 1rem;
+  transition: border-color 0.2s;
   width: 100%;
 }
 
@@ -360,23 +378,23 @@ button.button-dark:hover {
 .input-wrap input:focus,
 .input-wrap select:focus,
 .input-wrap textarea:focus {
-  border-color: #555;
+  border-color: #fff;
   outline: none;
 }
 
 .input-wrap input::-webkit-input-placeholder,
 .input-wrap textarea::-webkit-input-placeholder {
-  color: #555;
+  color: #e9d3a6;
 }
 
 .input-wrap input:-ms-input-placeholder,
 .input-wrap textarea:-ms-input-placeholder {
-  color: #555;
+  color: #e9d3a6;
 }
 
 .input-wrap input::-moz-placeholder,
 .input-wrap textarea::-moz-placeholder {
-  color: #555;
+  color: #e9d3a6;
 }
 
 .input-wrap.arrow:after,
@@ -396,14 +414,14 @@ button.button-dark:hover {
 }
 
 .input-required:after {
-  color: #ccc;
+  color: #e9d3a6;
   content: '*';
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   height: 0.65rem;
   line-height: 1;
   pointer-events: none;
   position: absolute;
-  right: 0.5rem;
+  right: 1rem;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -417,7 +435,10 @@ button.button-dark:hover {
 .site-nav {
   display: flex;
   justify-content: space-between;
-  margin-top: 1.2rem;
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  top: 2rem;
 }
 
 .site-nav-container {
@@ -446,11 +467,10 @@ button.button-dark:hover {
 .site-nav-logo-mobile {
   display: flex;
   align-items: center;
-  margin-left: 1.2rem;
 }
 
 .site-nav-logo-mobile a {
-  background-image: url('../images/icons/holley_logo_initials_black.svg');
+  background-image: url('../images/icons/holley_logo_initials_white.svg');
   background-position: 0 0;
   background-repeat: no-repeat;
   display: inline-block;
@@ -461,17 +481,19 @@ button.button-dark:hover {
 .site-nav-logo-desktop { display: none; }
 
 ul.site-nav-links {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 6rem);
+  justify-content: space-between;
   padding-top: 6rem;
-  text-align: center;
 }
 
-.site-nav-link { margin-bottom: 1.5rem; }
-
 .site-nav-link a {
-  color: #333;
+  color: #e9d3a6;
   display: inline-block;
   font-family: Georgia, Times, "Times New Roman", serif;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 600;
   line-height: 1.2;
   text-decoration: none;
@@ -500,7 +522,7 @@ ul.site-nav-links {
 }
 
 .site-nav-button > div {
-  background-color: #333;
+  background-color: #fff;
   height: 0.125rem;
   position: relative;
   transition: 0.2s;
@@ -509,7 +531,7 @@ ul.site-nav-links {
 
 .site-nav-button > div:before,
 .site-nav-button > div:after {
-  background-color: #333;
+  background-color: #fff;
   content: '';
   display: block;
   height: 0.125rem;
@@ -529,7 +551,7 @@ ul.site-nav-links {
 
 .nav-open .site-nav-button > div:before,
 .nav-open .site-nav-button > div:after {
-  background-color: #333;
+  background-color: #fff;
   transition: 0.2s;
 }
 
@@ -551,7 +573,8 @@ ul.site-nav-links {
 }
 
 .site-nav-mobile-overlay {
-  background-color: #ddd;
+  background: rgb(37,64,64);
+  background: linear-gradient(145deg, rgba(37,64,64,1) 20%, rgba(63,110,110,1) 100%);
   bottom: 0;
   box-shadow: 0 0 3.125rem rgb(0 0 0 / 30%) inset;
   height: 100%;
@@ -588,7 +611,31 @@ ul.site-nav-links {
 
 @media only screen and (min-width: 48em) {
 
-  .site-nav { margin-top: 2rem; }
+  .site-nav {
+    left: 3rem;
+    right: 3rem;
+    top: 1rem;
+  }
+
+  .site-nav:before,
+  .site-nav:after {
+    content: '';
+    border-top: 1px solid #e9d3a6;
+    position: relative;
+    top: 2rem;
+    width: 100%;
+    max-width: 15%;
+  }
+
+  .site-nav:before {
+    left: 0;
+    margin-right: 1rem;
+  }
+
+  .site-nav:after {
+    margin-left: 1rem;
+    right: 0;
+  }
 
   .site-nav-logo-mobile { margin-left: 2rem; }
 
@@ -603,7 +650,8 @@ ul.site-nav-links {
     left: 0;
     margin-left: auto;
     margin-right: auto;
-    max-width: 64rem;
+    max-width: 76rem;
+    min-width: 64rem;
     opacity: 1;
     position: relative;
     visibility: visible;
@@ -646,7 +694,7 @@ ul.site-nav-links {
   .site-nav-link a:hover,
   .site-nav-link a:focus,
   .site-nav-link a:active {
-    border-bottom-color: #333;
+    border-bottom-color: #e9d3a6;
   }
 
   .site-nav-logo-mobile { display: none; }
@@ -659,7 +707,7 @@ ul.site-nav-links {
   }
 
   .site-nav-logo-desktop a {
-    background-image: url('../images/icons/holley_logo_full_black.svg');
+    background-image: url('../images/icons/holley_logo_full_white.svg');
     background-position: 0 0;
     background-repeat: no-repeat;
     display: inline-block;
@@ -688,71 +736,7 @@ ul.site-nav-links {
 
 /**** HOME CONTENT ****/
 
-body.home {
-  background-image: url('../images/photos/holley_solo_acoustic_bw_1600x1000.jpg');
-  background-attachment: fixed;
-  background-position: left center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.dark-bg .site-nav-logo-mobile a { background-image: url('../images/icons/holley_logo_initials_white.svg'); }
-
-.dark-bg .site-nav-button > div { background-color: #fff; }
-
-.dark-bg .site-nav-button > div:before,
-.dark-bg .site-nav-button > div:after {
-  background-color: #fff;
-}
-
-.dark-bg .nav-open .site-nav-button > div:before,
-.dark-bg .nav-open .site-nav-button > div:after {
-  background-color: #333;
-}
-
-.dark-bg .input-wrap input,
-.dark-bg .input-wrap select,
-.dark-bg .input-wrap textarea {
-  border-bottom-color: #bbb;
-  color: #fff;
-}
-
-.dark-bg .input-wrap input:focus,
-.dark-bg .input-wrap select:focus,
-.dark-bg .input-wrap textarea:focus {
-  border-color: #fff;
-}
-
-.dark-bg .input-wrap input::-webkit-input-placeholder,
-.dark-bg .input-wrap textarea::-webkit-input-placeholder {
-  color: #ccc;
-}
-
-.dark-bg .input-wrap input:-ms-input-placeholder,
-.dark-bg .input-wrap textarea:-ms-input-placeholder {
-  color: #ccc;
-}
-
-.dark-bg .input-wrap input::-moz-placeholder,
-.dark-bg .input-wrap textarea::-moz-placeholder {
-  color: #ccc;
-}
-
-@media only screen and (min-width: 48em) {
-
-  body.home { background-position: 50% 50%; }
-
-  .dark-bg .site-nav-logo-desktop a { background-image: url('../images/icons/holley_logo_full_white.svg'); }
-
-  .dark-bg .site-nav-link a { color: #fff; }
-
-  .dark-bg .site-nav-link a:hover,
-  .dark-bg .site-nav-link a:focus,
-  .dark-bg .site-nav-link a:active {
-    border-bottom-color: #fff;
-  }
-
-}
+body.home { background-image: url('../images/black_and_white_standing_guitar_1600x1000.jpg'); }
 
 
 /**** MEDIA ****/
@@ -779,6 +763,81 @@ body.home {
 }
 
 .media-wrap h4 { margin-top: 0.6rem; }
+
+
+/**** SHOWS ****/
+
+.bit-widget .bit-top-track-button,
+.bit-widget .bit-nav-bar-container .bit-nav-bar .bit-logo-container,
+.bit-widget .bit-nav-bar-container .bit-nav-bar,
+.bit-widget .bit-play-my-city-button {
+  display: none !important;
+}
+
+.bit-widget .bit-upcoming-events {
+  border-bottom: 1px solid #3f6e6e !important;
+  margin: 0 !important;
+}
+
+.bit-widget .bit-event { padding: 0.9rem 0 !important; }
+
+.bit-widget .bit-event:hover { background-color: rgb(81 81 81 / 20%) !important; }
+
+.bit-widget .bit-event .bit-date,
+.bit-widget .bit-venue,
+.bit-widget .bit-event .bit-location {
+  color: #fff !important;
+}
+
+.bit-widget .bit-event .bit-event-buttons { margin-top: 0 !important; }
+
+.bit-widget .bit-event .bit-button {
+  min-width: 7rem !important;
+  width: auto !important;
+}
+
+.bit-widget.bit-layout-desktop .bit-offers { margin-left: 0.9rem !important; }
+
+.bit-widget .bit-event .bit-offers-text {
+  text-transform: inherit !important;
+  font-size: inherit !important;
+}
+
+.bit-widget .bit-event { border-top: 1px solid #3f6e6e !important; }
+
+
+bit-html-export {
+  width: 100%;
+  background: #fff;
+  font-family: Arial;
+  color: black;
+  font-size: 12px;
+}
+.bit-table {
+  width: 100%;
+}
+.bit-table td {
+  padding: 7px 10px;
+  vertical-align: middle;
+}
+
+.bit-table a {
+  color: #00b4b3;
+  text-decoration: none;
+}
+
+/* alternate row background color */
+.bit-table tr:nth-of-type(2n) {
+  background: #eee;
+}
+
+/* separate line between rows */
+ .bit-table tr td { border-bottom: 1px solid #ccc } 
+
+.bit-table .bit-cta {
+  text-align: center;
+  width: 25%;
+}
 
 
 /**** NEWS ****/
@@ -812,10 +871,16 @@ body.home {
 /**** FOOTER ****/
 
 .site-footer {
+  background: rgb(37,64,64);
+  background: linear-gradient(145deg, rgba(37,64,64,1) 20%, rgba(63,110,110,1) 100%);
+  margin-top: auto;
+  width: auto;
+}
+
+.site-footer-inner {
   display: flex;
   flex-flow: column;
-  margin: auto auto 0;
-  padding: 0 1.2rem 1.2rem;
+  padding: 2rem;
   width: 100%;
 }
 
@@ -823,12 +888,9 @@ body.home {
 
 .newsletter-signup { margin-bottom: 1.5rem; }
 
-.newsletter-signup-heading {
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-}
+.newsletter-signup h3 { margin-bottom: 0.5rem; }
+
+.newsletter-signup .input-wrap { width: 13rem; }
 
 /* Social Media Links */
 
@@ -841,7 +903,7 @@ body.home {
 
 .social-links a {
   display: inline-block;
-  opacity: 0.5;
+  opacity: 0.6;
   transition: opacity 0.2s;
 }
 
@@ -852,20 +914,23 @@ body.home {
 }
 
 .social-links .icon {
-  fill: #333;
-  height: 1.875rem;
-  width: 1.875rem;
+  height: 2rem;
+  width: 2rem;
 }
 
-.dark-bg .social-links .icon { fill: #fff; }
+.social-links .icon > svg { fill: #e9d3a6; }
+
+.copyright {
+  color: #fff;
+  margin-top: 0.5rem;
+}
 
 @media only screen and (min-width: 48em) {
 
-  .site-footer {
+  .site-footer-inner {
     flex-flow: row;
     justify-content: space-between;
-    max-width: 82.5rem;
-    padding: 0 3.125rem 2rem;
+    padding: 4rem 3rem;
   }
 
   .newsletter-signup { margin-bottom: 0; }
@@ -873,6 +938,8 @@ body.home {
   .social-links {
     align-items: flex-end;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
 }

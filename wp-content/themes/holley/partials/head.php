@@ -19,4 +19,4 @@ wp_head();
 include_once('favicons.php');
 include_once('social-meta.php'); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>

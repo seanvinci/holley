@@ -14,6 +14,7 @@
 if (!defined('WPINC')) { die; }
 
 require_once('includes/add-video-embed-wrapper.php');
+require_once('includes/custom-body-classes.php');
 require_once('includes/clean-up-default-classes.php');
 require_once('includes/clean-up-head.php');
 require_once('includes/custom-acf-editor.php');
