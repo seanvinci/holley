@@ -3,28 +3,24 @@
   <div class="site-main-inner">
     <section class="content-block-bottom content-block-top">
       <div class="column">
+        <?php if (have_rows('content_sections')): ?>
+        <?php while (have_rows('content_sections')): the_row();
+          $section_heading = get_sub_field('section_heading');
+          $section_body = get_sub_field('section_body');
+          $section_image = get_sub_field('section_image');
+        ?>
         <div class="about-wrap column column-max-2">
           <div class="about-wrap-text">
-            <h2>About Holley</h2>
-            <p>Sed ut ita ruant itaque earum motus et iusto odio dignissimos ducimus, qui dolorem ipsum, quia voluptas in culpa, qui officia deserunt mollitia animi, id totum evertitur eo delectu rerum, quem modo dixi, constituto, ut labore et molestiae consequatur.</p>
-            <p>Epicurus in liberos atque haec subtilius velint tradere et ultimum bonorum, quod maxime consuevit iactare vestra se esse albam, dulce mel quorum facta quem ad naturam aut quid est et negent satis esse ratione neque porro quisquam est, necesse.</p>
-            <p>Sed ut summum bonum sit numeranda nec segniorem ad respondendum reddidisti quorum nihil est, necesse est, omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque gaudere ut earum motus et aut in gravissimo bello animadversionis.</p>
-            <p>Epicurus in liberos atque haec subtilius velint tradere et ultimum bonorum, quod maxime consuevit iactare vestra se esse albam, dulce mel quorum facta quem ad naturam aut quid est et negent satis esse ratione neque porro quisquam est, necesse.</p>
+            <?php if ($section_heading) echo '<h2>'. $section_heading .'</h2>'; ?>
+            <?php if ($section_body) echo $section_body; ?>
           </div>
+          <?php if ($section_image): ?>
           <div class="about-wrap-image">
-            <img src="https://via.placeholder.com/800x600" alt="">
+            <img src="<?php echo $section_image; ?>" alt="">
           </div>
+          <?php endif; ?>
         </div>
-        <div class="about-wrap column column-max-2">
-          <img src="https://via.placeholder.com/800x600" alt="">
-          <div class="about-wrap-text">
-            <h2>About The Band</h2>
-            <p>Sed ut ita ruant itaque earum motus et iusto odio dignissimos ducimus, qui dolorem ipsum, quia voluptas in culpa, qui officia deserunt mollitia animi, id totum evertitur eo delectu rerum, quem modo dixi, constituto, ut labore et molestiae consequatur.</p>
-            <p>Epicurus in liberos atque haec subtilius velint tradere et ultimum bonorum, quod maxime consuevit iactare vestra se esse albam, dulce mel quorum facta quem ad naturam aut quid est et negent satis esse ratione neque porro quisquam est, necesse.</p>
-            <p>Sed ut summum bonum sit numeranda nec segniorem ad respondendum reddidisti quorum nihil est, necesse est, omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque gaudere ut earum motus et aut in gravissimo bello animadversionis.</p>
-            <p>Epicurus in liberos atque haec subtilius velint tradere et ultimum bonorum, quod maxime consuevit iactare vestra se esse albam, dulce mel quorum facta quem ad naturam aut quid est et negent satis esse ratione neque porro quisquam est, necesse.</p>
-          </div>
-        </div>
+        <?php endwhile; endif; ?>
       </div>
     </section>
   </div>

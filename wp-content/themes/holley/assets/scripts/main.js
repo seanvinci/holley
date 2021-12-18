@@ -1,5 +1,6 @@
 // (function($) {
 
+const $window = $('window');
 const $body = $('body');
 const $nav = $('.site-nav');
 
@@ -18,6 +19,43 @@ const toggleNav = () => {
 const resetNav = () => {
   $body.removeClass('nav-open');
 }
+
+
+// Smooth scrolling function for all hash links
+function smoothScroll() {
+  $('a[href*=\\#]:not([href=\\#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+        return false;
+      }
+    }
+  });
+}
+
+
+// Execute on page load
+$body.removeClass('preload');
+smoothScroll();
+
+
+// Execute functions after load
+$window.on('load', function() {
+
+  smoothScroll();
+
+});
+
+
+// Execute scrolling functions
+// $window.on('scroll touchmove', function() {
+
+
+// });
 
 
 $(document).ready(function() {

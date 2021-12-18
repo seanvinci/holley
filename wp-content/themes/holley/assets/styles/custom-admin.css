@@ -1,12 +1,12 @@
 /* ACF Custom Admin Layout */
 
+/* Utilities */
 
-.nopad { padding: 0 !important; }
+.acf-admin-nopad { padding: 0 !important; }
 
 .acf-admin-hide { display: none !important; }
 
 .acf-admin-bold-title label { font-weight: 600 !important; }
-
 
 .acf-admin-wordwrap-fix .select2-container { overflow: hidden !important; }
 
@@ -265,21 +265,3 @@ div.acf-field.acf-admin-no-top-border {
 /* Reduce width of range slider */
 
 .acf-admin-reduce-range-slider .acf-range-wrap input[type="range"] { width: 6rem; }
-
-
-/* Summer Terms & Grades - Grade ordering */
-
-.acf-admin-fix-grade-order .acf-taxonomy-field .acf-checkbox-list ul.children {
-  display: flex;
-  flex-direction: column;
-}
-
-.acf-admin-fix-grade-order .acf-taxonomy-field .acf-checkbox-list ul.children li:first-child { order: 2; }
-
-.acf-admin-fix-grade-order .acf-taxonomy-field .acf-checkbox-list ul.children li:nth-child(2) { order: 3; }
-
-.acf-admin-fix-grade-order .acf-taxonomy-field .acf-checkbox-list ul.children li:nth-child(3) { order: 4; }
-
-.acf-admin-fix-grade-order .acf-taxonomy-field .acf-checkbox-list ul.children li:nth-child(4) { order: 1; }
-
-.acf-admin-fix-grade-order .acf-taxonomy-field .acf-checkbox-list ul.children li:nth-child(5) { order: 5; }

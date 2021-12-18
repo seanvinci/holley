@@ -78,6 +78,10 @@ hr {
 .left { float: left; }
 .right { float: right; }
 
+.tac { text-align: center !important; }
+.tal { text-align: left !important; }
+.tar { text-align: right !important; }
+
 
 /* Images */
 
@@ -95,7 +99,7 @@ hr {
   width: 100%;
 }
 
-/**** GLOBAL ****/
+/**** UNIVERSAL ****/
 
 body {
   background-color: #111;
@@ -106,9 +110,10 @@ body {
   display: flex;
   flex-basis: 100%;
   flex-direction: column;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
+  font-weight: 400;
   height: 100%;
 }
 
@@ -123,6 +128,8 @@ body:after {
   top: 0;
   z-index: -100;
 }
+
+.preload * { transition: 0s 0s !important; }
 
 .column {
   display: grid;
@@ -151,20 +158,17 @@ body:after {
 
 /* Main Content Area */
 
-.site-main {
-  width: auto;
-}
+.site-main { width: auto; }
 
 .site-main-inner {
   flex: 1;
   margin: 0 auto;
   padding: 6rem 2rem 2rem;
+  position: relative;
   width: 100%;
 }
 
-.home .site-main-inner {
-  height: calc(100vh - 6rem);
-}
+.home .site-main-inner { height: calc(100vh - 6rem); }
 
 .content-block-bottom { padding-bottom: 1rem; }
 
@@ -254,21 +258,27 @@ p {}
   }
 
   p {
-    line-height: 1.4;
+    line-height: 1.5;
     margin-bottom: 1.2rem;
   }
 
 }
 
-/**** BUTTONS & LINKS ****/
+/**** LINKS & BUTTONS ****/
 
-a,
-a:hover {
+a:not(.button) {
   color: #e9d3a6;
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  border-bottom-width: 0.0625rem;
+  transition: border-bottom-color 0.2s;
 }
 
-a:hover { text-decoration: none; }
+a:not(.button):hover {
+  border-bottom-color: #e9d3a6;
+  text-decoration: none;
+}
 
 a[href^="tel:"],
 a[href^="tel:"]:hover,
@@ -712,11 +722,14 @@ ul.site-nav-links {
     background-repeat: no-repeat;
     display: inline-block;
     height: 3.85rem;
+    border-bottom: none;
     text-indent: -9999px;
     transition-property: height, width;
     transition-duration: 0.2s;
     width: 19rem;
   }
+
+  .site-nav-logo-desktop a { border-bottom: none; }
 
   .site-nav-button { display: none; }
 
@@ -737,6 +750,33 @@ ul.site-nav-links {
 /**** HOME CONTENT ****/
 
 body.home { background-image: url('../images/black_and_white_standing_guitar_1600x1000.jpg'); }
+
+.home-callout-wrap {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 3rem;
+  top: 30%;
+}
+
+a.home-callout-image {
+  border: 0.0625rem solid #e9d3a6;
+  display: inline-block;
+  max-width: 18.75rem;
+  padding: 0.8rem;
+}
+
+.home-callout-text { margin-left: 2rem; }
+
+.home-callout-text span {
+  display: inline-block;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+}
 
 
 /**** MEDIA ****/
@@ -832,7 +872,7 @@ bit-html-export {
 }
 
 /* separate line between rows */
- .bit-table tr td { border-bottom: 1px solid #ccc } 
+.bit-table tr td { border-bottom: 1px solid #ccc } 
 
 .bit-table .bit-cta {
   text-align: center;
@@ -848,7 +888,7 @@ bit-html-export {
 
 .news-wrap-image {
   display: inline-block;
-  height: 23.75rem;
+  height: 25rem;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -862,10 +902,17 @@ bit-html-export {
 .news-single img { margin-bottom: 2rem; }
 
 .news-single p {
-  font-size: 1.125rem;
-  line-height: 1.5;
+  font-size: 1.125rem;  
   margin-bottom: 1.4rem;
 }
+
+
+/**** ABOUT ****/
+
+
+.about-wrap:nth-child(even) { direction: rtl; }
+
+.about-wrap-text { direction: ltr; }
 
 
 /**** FOOTER ****/
