@@ -11,7 +11,7 @@
         </nav>
       </header>
       <?php if (have_rows('videos')): ?>
-      <div class="column column-max-2">
+      <div class="column">
         <?php while (have_rows('videos')): the_row();
           $video = get_sub_field('video');
         ?>
@@ -37,7 +37,6 @@
       </div>
       <?php endif; ?>
     </section>
-    <hr>
     <section class="content-block-bottom content-block-top" id="photos">
       <header class="content-header">
         <h2>Photos</h2>

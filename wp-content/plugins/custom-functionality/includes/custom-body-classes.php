@@ -9,10 +9,11 @@ function my_class_names($classes) {
   $arr[] = 'preload';
 
   // Home Page
-  if (is_front_page()) $arr[] = 'home';
-
-  // Media Page
-  if (is_page('media')) $arr[] = 'media';
+  if (is_front_page()) {
+    $arr[] = 'home';
+  } else {
+    $arr[] = $post->post_name;
+  }
 
   return $arr;
 

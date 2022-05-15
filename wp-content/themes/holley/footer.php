@@ -51,7 +51,7 @@
         </ul>
       </nav>
       <div class="copyright">
-        <small>&copy; 2021 Holley McCreary</small>
+        <small>&copy; <?php echo date("Y"); ?> Holley McCreary</small>
       </div>
     </section>
   </div>

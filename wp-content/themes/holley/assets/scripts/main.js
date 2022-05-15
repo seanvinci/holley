@@ -10,23 +10,23 @@ const $nav = $('.site-nav');
 // Open and close main navigation
 const toggleNav = () => {
   if ($body.hasClass('nav-open')) {
-    $body.removeClass('nav-open');
+    $body.removeClass('nav-open no-scroll');
   } else {
-    $body.addClass('nav-open');
+    $body.addClass('nav-open no-scroll');
   }
 }
 
 const resetNav = () => {
-  $body.removeClass('nav-open');
+  $body.removeClass('nav-open no-scroll');
 }
 
 
 // Smooth scrolling function for all hash links
 function smoothScroll() {
   $('a[href*=\\#]:not([href=\\#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
         $('html,body').animate({
           scrollTop: target.offset().top
@@ -61,9 +61,7 @@ $window.on('load', function() {
 $(document).ready(function() {
 
   // Responsive videos
-  if ($body.hasClass('media')) {
-    $(".video").fitVids();
-  }
+  // $(".video").fitVids();
 
   // Header Navigation
 
