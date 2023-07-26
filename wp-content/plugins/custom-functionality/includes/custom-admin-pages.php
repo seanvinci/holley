@@ -52,28 +52,6 @@ function hide_menu() {
 add_action('admin_head', 'hide_menu');
 
 
-// OLD???
-// // Hide customize sub menu in appearance menu for all users
-// function remove_customize() {
-//   $customize_url_arr = array();
-//   $customize_url_arr[] = 'customize.php'; // 3.x
-//   $customize_url = add_query_arg( 'return', urlencode( wp_unslash( $_SERVER['REQUEST_URI'] ) ), 'customize.php' );
-//   $customize_url_arr[] = $customize_url; // 4.0 & 4.1
-//   if (current_theme_supports('custom-header') && current_user_can('customize')) {
-//     $customize_url_arr[] = add_query_arg( 'autofocus[control]', 'header_image', $customize_url ); // 4.1
-//     $customize_url_arr[] = 'custom-header'; // 4.0
-//   }
-//   if (current_theme_supports('custom-background') && current_user_can('customize')) {
-//     $customize_url_arr[] = add_query_arg('autofocus[control]', 'background_image', $customize_url); // 4.1
-//     $customize_url_arr[] = 'custom-background'; // 4.0
-//   }
-//   foreach ($customize_url_arr as $customize_url) {
-//     remove_submenu_page('themes.php', $customize_url);
-//   }
-// }
-// add_action('admin_menu', 'remove_customize', 999);
-
-
 
 // Hide customize sub menu in appearance menu for all users
 function remove_header_and_bg(){
