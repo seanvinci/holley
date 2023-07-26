@@ -6,7 +6,7 @@
         <h2><?php the_title(); ?></h2>
       </header>    
       <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script>
-      <a class="bit-widget-initializer" data-artist-name="id_12895856" data-language="en" data-display-past-dates="false"></a>
+      <a class="bit-widget-initializer" data-artist-name="id_10317223" data-language="en" data-display-past-dates="false"></a>
     </section>
   </div>
 </main>
