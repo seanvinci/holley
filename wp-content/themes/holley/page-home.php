@@ -2,7 +2,7 @@
 get_header();
 $preheading = get_field('pre_heading');
 $heading = get_field('heading');
-$video = get_field('video');
+$content = get_field('content');
 $link_text = get_field('link_text');
 $link_url = get_field('link_url'); ?>
 <main class="site-main">
@@ -13,11 +13,7 @@ $link_url = get_field('link_url'); ?>
           <?php if ($preheading) echo '<h3>' .$preheading. '</h3>'; ?>
           <?php if ($heading) echo '<h2>' .$heading. '</h2>'; ?>
         </header>
-        <?php if ($video): ?>
-        <div class="video">
-          <?php echo $video; ?>
-        </div>
-        <?php endif; ?>
+        <?php if ($content) echo $video; ?>
         <?php if ($link_text && $link_url) echo '<a class="button button-solid" href="' .$link_url. '" target="_blank">' .$link_text. '</a>'; ?>
       </div>
     </section>
